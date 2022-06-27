@@ -5,7 +5,7 @@ import { MdOutlineMenu, MdClose } from 'react-icons/md';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-        <nav className="px-2 sm:px-4 pt-5 bg-transparent">
+        <nav className="absolute w-full px-2 sm:px-4 pt-5 bg-transparent">
             <div className="container flex flex-wrap justify-between items-center mx-auto border-b-white/[0.05] border-b-[1px] pb-4">
                 <img src={Logo} className="mr-3 h-12 pointer-events-none select-none" alt="Logo" />
 
@@ -31,8 +31,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {menuOpen &&
-                <div className="md:hidden absolute top-0 right-0 h-screen bg-slate-900/50 backdrop-blur-lg sm:w-2/5 xs:w-3/5 w-4/5">
-                    <ul className="flex flex-col w-4/5 mt-24 px-4 font-medium">
+                <div className="md:hidden absolute top-0 right-0 h-screen bg-slate-900/50 backdrop-blur-lg">
+                    <ul className="flex flex-col mt-24 xs:pr-24 xs:pl-8 pr-16 pl-6 font-medium">
                         <li>
                             <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Exchange</p>
                         </li>
