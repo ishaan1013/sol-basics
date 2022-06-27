@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+
+import { Landing, Loader, Navbar, Services, Transactions } from './components';
 
 const App = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div className="min-h-screen">
+        <div>
+          <Navbar />
+          <Landing />
+        </div>
+
+        <Services />
+        <Transactions />
     </div>
   )
 }
