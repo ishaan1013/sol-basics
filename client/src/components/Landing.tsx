@@ -1,7 +1,24 @@
+import {
+    Formik,
+    FormikHelpers,
+    FormikProps,
+    Form,
+    Field,
+    FieldProps,
+} from 'formik';
+
 import Eth1 from '../assets/eth1.png'
 import Eth2 from '../assets/eth2.png'
+  
+interface MyFormValues {
+    ethAddress: string;
+    amount: string;
+    keyword: string;
+    message: string;
+}
 
 const Landing = () => {
+    const initialValues: MyFormValues = { ethAddress: '', amount: '', keyword: '', message: '' };
     return (
         <section className="w-full h-screen flex justify-center pt-8">
             <div className="container h-full flex justify-between items-center relative">
@@ -23,8 +40,30 @@ const Landing = () => {
                         <p className="text-white/60 italic font-light">Address</p>
                         <h1 className="text-white/90 text-xl font-bold">...</h1>
                     </div>
-                    <div className="w-[26rem] h-96 rounded-3xl bg-gradient-to-bl from-white/[0.05] to-white/[0.01] border-[1px] border-white/50 backdrop-blur-3xl">
+                    <div className="w-[26rem] p-6 rounded-3xl bg-gradient-to-bl from-white/[0.05] to-white/[0.01] border-[1px] border-white/50 backdrop-blur-3xl">
+                        <Formik
+                        initialValues={initialValues}
+                        onSubmit={(values, actions) => {
+                            console.log({ values, actions });
+                            alert(JSON.stringify(values, null, 2));
+                            actions.setSubmitting(false);
+                        }}
+                        >
+                            <Form>
+                                <div className="flex flex-col w-full">
+                                    <label className="text-white font-medium text-xs mb-1 pl-2" htmlFor="ethAddress">Address</label>
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="ethAddress" name="ethAddress" placeholder="Your Address" />
+                                    <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="amount">Amount</label>
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="amount" name="amount" placeholder="Your Amount" />
+                                    <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="keyword">Keyword</label>
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="keyword" name="keyword" placeholder="Your Keyword" />
+                                    <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="message">Message</label>
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="message" name="message" placeholder="Your Message" />
 
+                                    <button className="focus:outline-violet-400 focus:border-none select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-6 rounded-lg text-[#0f121aee] font-bold" type="submit">Submit</button>
+                                </div>
+                            </Form>
+                        </Formik>
                     </div>
                 </div>
 
