@@ -9,6 +9,12 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
 * {
     font-family: 'Open Sans', sans-serif;
 }
@@ -24,4 +30,9 @@ body {
     to {
         transform: translateX(0);
     }
+}
+
+::selection {
+    color: white;
+    background: #fbbf24;
 }
