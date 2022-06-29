@@ -22,16 +22,6 @@ interface MyFormValues {
 const Landing = () => {
     const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
 
-    const handleSubmit = (e:SyntheticEvent) => {
-        const { addressTo, amount, keyword, message }: any = formData;
-    
-        e.preventDefault();
-    
-        if (!addressTo || !amount || !keyword || !message) return;
-    
-        sendTransaction();
-    };
-
     const initialValues: MyFormValues = { ethAddress: '', amount: '', keyword: '', message: '' };
     return (
         <section className="w-full h-screen flex justify-center pt-8">
@@ -73,7 +63,7 @@ const Landing = () => {
                             // alert(values.ethAddress);
 
                             if (values.ethAddress && values.amount && values.keyword && values.message) {
-                                sendTransaction();
+                                sendTransaction(values.ethAddress, values.amount, values.keyword, values.message);
                             }
 
                             actions.setSubmitting(false);

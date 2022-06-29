@@ -10,7 +10,7 @@ interface TransactionContext {
     transactions: any,
     currentAccount: string,
     isLoading: boolean,
-    sendTransaction: () => void,
+    sendTransaction: (ethAddress:string, amount:string, keyword:string, message:string) => void,
     handleChange: (e: any, name: any) => void,
     formData: object,
 }
@@ -120,10 +120,10 @@ const createEthereumContract = () => {
         }
     };
   
-    const sendTransaction = async () => {
+    const sendTransaction = async (ethAddress:string, amount:string, keyword:string, message:string) => {
       try {
         if (ethereum) {
-          const { addressTo, amount, keyword, message } = formData;
+        //   const { addressTo, amount, keyword, message } = formData;
           const transactionsContract = createEthereumContract();
           const parsedAmount = ethers.utils.parseEther(amount);
   
@@ -131,13 +131,13 @@ const createEthereumContract = () => {
             method: "eth_sendTransaction",
             params: [{
               from: currentAccount,
-              to: addressTo,
+              to: ethAddress,
               gas: "0x5208",
               value: parsedAmount._hex,
             }],
           });
   
-          const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
+          const transactionHash = await transactionsContract.addToBlockchain(ethAddress, parsedAmount, message, keyword);
   
           setIsLoading(true);
           console.log(`Loading - ${transactionHash.hash}`);
