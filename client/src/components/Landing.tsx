@@ -41,11 +41,18 @@ const Landing = () => {
                 <img src={Eth1} alt="Background Image" className="absolute -right-44 -z-10 mb-20" />
                 <div>
                     <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-300 font-extrabold text-[6rem]">Exchange</h1>
+                    { currentAccount ? 
+                    <button 
+                    className="select-none bg-gradient-to-r from-violet-400 to-blue-300 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold text-lg cursor-not-allowed opacity-50">
+                        Wallet Connected!
+                    </button>
+                    :
                     <button 
                     onClick={() => {connectWallet()}}
                     className="select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold text-lg">
                         Connect Wallet
                     </button>
+                    }
                 </div>
 
                 <div>
