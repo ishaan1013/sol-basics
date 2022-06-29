@@ -1,3 +1,4 @@
+import { useContext, SyntheticEvent } from "react"
 import {
     Formik,
     FormikHelpers,
@@ -6,6 +7,7 @@ import {
     Field,
     FieldProps,
 } from 'formik';
+import { TransactionContext } from '../context/TransactionContext';
 
 import Eth1 from '../assets/eth1.png'
 import Eth2 from '../assets/eth2.png'
@@ -18,6 +20,18 @@ interface MyFormValues {
 }
 
 const Landing = () => {
+    const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
+
+    const handleSubmit = (e:SyntheticEvent) => {
+        const { addressTo, amount, keyword, message }: any = formData;
+    
+        e.preventDefault();
+    
+        if (!addressTo || !amount || !keyword || !message) return;
+    
+        sendTransaction();
+    };
+
     const initialValues: MyFormValues = { ethAddress: '', amount: '', keyword: '', message: '' };
     return (
         <section className="w-full h-screen flex justify-center pt-8">
@@ -27,7 +41,11 @@ const Landing = () => {
                 <img src={Eth1} alt="Background Image" className="absolute -right-44 -z-10 mb-20" />
                 <div>
                     <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-300 font-extrabold text-[6rem]">Exchange</h1>
-                    <button className="select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold text-lg">Connect Wallet</button>
+                    <button 
+                    onClick={() => {connectWallet()}}
+                    className="select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold text-lg">
+                        Connect Wallet
+                    </button>
                 </div>
 
                 <div>
@@ -44,8 +62,13 @@ const Landing = () => {
                         <Formik
                         initialValues={initialValues}
                         onSubmit={(values, actions) => {
-                            console.log({ values, actions });
-                            alert(JSON.stringify(values, null, 2));
+                            // console.log({ values, actions });
+                            // alert(values.ethAddress);
+
+                            if (values.ethAddress && values.amount && values.keyword && values.message) {
+                                sendTransaction();
+                            }
+
                             actions.setSubmitting(false);
                         }}
                         >
