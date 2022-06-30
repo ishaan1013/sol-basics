@@ -16,14 +16,13 @@ import Eth2 from '../assets/eth2.png'
 interface MyFormValues {
     ethAddress: string;
     amount: string;
-    keyword: string;
     message: string;
 }
 
 const Landing = () => {
     const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
 
-    const initialValues: MyFormValues = { ethAddress: '', amount: '', keyword: '', message: '' };
+    const initialValues: MyFormValues = { ethAddress: '', amount: '', message: '' };
     return (
         <section className="w-full h-screen flex justify-center pt-8">
             <div className="container h-full flex lg:flex-row flex-col lg:mt-0 mt-[22vh] justify-between items-center relative">
@@ -67,8 +66,8 @@ const Landing = () => {
                             // console.log({ values, actions });
                             // alert(values.ethAddress);
 
-                            if (values.ethAddress && values.amount && values.keyword && values.message) {
-                                sendTransaction(values.ethAddress, values.amount, values.keyword, values.message);
+                            if (values.ethAddress && values.amount && values.message) {
+                                sendTransaction(values.ethAddress, values.amount, values.message);
                             }
 
                             actions.setSubmitting(false);
@@ -80,8 +79,6 @@ const Landing = () => {
                                     <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="ethAddress" name="ethAddress" placeholder="Your Address" />
                                     <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="amount">Amount</label>
                                     <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="amount" name="amount" placeholder="Your Amount" />
-                                    <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="keyword">Keyword</label>
-                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="keyword" name="keyword" placeholder="Your Keyword" />
                                     <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="message">Message</label>
                                     <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="message" name="message" placeholder="Your Message" />
 

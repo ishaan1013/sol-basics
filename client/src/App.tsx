@@ -16,8 +16,8 @@ const App = () => {
             <Navbar />
             <Landing />
           </div>
-          {/* <Transactions /> */}
       </div>
+        <Transactions />
     </>
   )
 }
