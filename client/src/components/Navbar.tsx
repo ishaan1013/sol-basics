@@ -4,6 +4,21 @@ import { MdOutlineMenu, MdClose } from 'react-icons/md';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const scroll1 = () => {
+        window.scroll({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+    const scroll2 = () => {
+        window.scroll({
+            top: 2000,
+            behavior: "smooth"
+        })
+    }
+
     return (
         <nav className="absolute w-full px-2 sm:px-4 pt-5 bg-transparent select-none">
             <div className="container flex flex-wrap justify-between items-center mx-auto border-b-white/[0.05] border-b-[1px] pb-4">
@@ -23,10 +38,14 @@ const Navbar = () => {
                 <div className="hidden w-full md:block md:w-auto z-50">
                     <ul className="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium">
                         <li>
-                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Exchange</p>
+                            <div 
+                            onClick={scroll1}
+                            className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Exchange</div>
                         </li>
                         <li>
-                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Transactions</p>
+                            <div 
+                            onClick={scroll2}
+                            className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Transactions</div>
                         </li>
                     </ul>
                 </div>
@@ -36,10 +55,14 @@ const Navbar = () => {
                     <div className="backdrop-blur-lg  w-full h-full">
                         <ul className="flex flex-col mt-24 xs:pr-24 xs:pl-8 pr-16 pl-6 font-medium">
                             <li>
-                                <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Exchange</p>
+                                <div 
+                                onClick={scroll1}
+                                className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Exchange</div>
                             </li>
                             <li>
-                                <p className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Transactions</p>
+                                <div 
+                                onClick={scroll2}
+                                className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Transactions</div>
                             </li>
                         </ul>
                     </div>
