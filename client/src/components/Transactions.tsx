@@ -49,14 +49,18 @@ const TransactionsCard:FC<CardProps> = ({ addressTo, addressFrom, timestamp, mes
   
 
 const Transactions = () => {
-    const { currentAccount } = useContext(TransactionContext)
+    const { currentAccount, transactions } = useContext(TransactionContext)
 
     return (
         <section className="w-screen flex-col flex py-16 lg:mt-0 mt-8 items-center">
+            {currentAccount ? 
             <h1 className="sm:text-[3rem] text-[9vw] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400">Transactions</h1>
+            :
+            <h1 className="sm:text-[3rem] text-[9vw] font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-400 to-green-400">Connect Your Wallet To See Transactions.</h1>
+            }
 
             <div className="flex flex-wrap justify-center items-center mt-12 px-12">
-                {testData.reverse().map((transaction, i) => (
+                {transactions.reverse().map((transaction:any, i:number) => (
                 <TransactionsCard key={i} {...transaction} />
                 ))}
             </div>

@@ -88,7 +88,7 @@ const createEthereumContract = () => {
       }
     };
   
-    const checkIfTransactionsExists = async () => {
+    const checkIfTransactionsExist = async () => {
       try {
         if (ethereum) {
           const transactionsContract = createEthereumContract();
@@ -160,7 +160,7 @@ const createEthereumContract = () => {
   
     useEffect(() => {
       checkIfWalletIsConnect();
-      checkIfTransactionsExists();
+      checkIfTransactionsExist();
     }, [transactionCount]);
   
     return (

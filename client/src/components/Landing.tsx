@@ -9,6 +9,7 @@ import {
 } from 'formik';
 import { TransactionContext } from '../context/TransactionContext';
 import { shortenAddress } from "../utils/shortenAddress";
+import Loader from "./Loader";
 
 import Eth1 from '../assets/eth1.png'
 import Eth2 from '../assets/eth2.png'
@@ -82,7 +83,11 @@ const Landing = () => {
                                     <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="message">Message</label>
                                     <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="message" name="message" placeholder="Your Message" />
 
+                                    { isLoading ?
+                                    <Loader/>
+                                    :
                                     <button className="focus:outline-violet-400 focus:border-none select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-6 rounded-lg text-[#0f121aee] font-bold" type="submit">Submit</button>
+                                    }
                                 </div>
                             </Form>
                         </Formik>
