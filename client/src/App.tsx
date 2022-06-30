@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Landing, Loader, Navbar, Services, Transactions } from './components';
+import { Landing, Loader, Navbar, Transactions } from './components';
 
 const App = () => {
   const [count, setCount] = useState(0)
@@ -16,7 +16,6 @@ const App = () => {
             <Navbar />
             <Landing />
           </div>
-          <Services />
           <Transactions />
       </div>
     </>
