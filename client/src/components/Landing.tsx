@@ -24,22 +24,22 @@ const Landing = () => {
 
     const initialValues: MyFormValues = { ethAddress: '', amount: '', message: '' };
     return (
-        <section className="w-full h-screen flex justify-center pt-8">
-            <div className="container h-full flex lg:flex-row flex-col lg:mt-0 mt-[22vh] justify-between items-center relative">
+        <section className="w-full min-h-screen flex justify-center pt-8">
+            <div className="container min-h-screen flex lg:flex-row flex-col lg:mt-0 mt-[22vh] justify-between items-center relative">
                 <div className="bg-violet-500 -z-10 w-12 h-96 rounded-[100%] absolute left-36 -mt-24 -rotate-12 blur-[80px] opacity-60"/>
                 <div className="bg-blue-500 -z-10 w-12 h-96 rounded-[100%] absolute left-80 mt-16 -rotate-[70deg] blur-[80px] opacity-60"/>
                 <img src={Eth1} alt="Background Image" className="absolute lg:-right-44 -z-10 lg:mb-20 lg:mt-0 mt-96 lg:ml-0 ml-72" />
                 <div>
-                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-blue-300 font-extrabold sm:text-[6rem] text-[16vw]">Exchange</h1>
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-blue-300 font-extrabold sm:text-[6rem] text-[16vw]">Exchange</h1>
                     { currentAccount ? 
                     <button 
-                    className="select-none bg-gradient-to-r from-violet-400 to-blue-300 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold sm:text-lg xs:text-[1rem] text-sm cursor-not-allowed opacity-50">
+                    className="select-none bg-gradient-to-r from-violet-400 to-blue-300 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold sm:text-lg xs:text-base text-sm cursor-not-allowed opacity-50">
                         Wallet Connected!
                     </button>
                     :
                     <button 
                     onClick={() => {connectWallet()}}
-                    className="select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold sm:text-lg xs:text-[1rem] text-sm">
+                    className="select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-2 rounded-lg text-[#0f121a] font-bold sm:text-lg xs:text-base text-sm">
                         Connect Wallet
                     </button>
                     }

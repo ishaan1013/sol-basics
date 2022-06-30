@@ -23,10 +23,10 @@ const Navbar = () => {
                 <div className="hidden w-full md:block md:w-auto z-50">
                     <ul className="flex flex-col mt-4 md:flex-row md:space-x-4 md:mt-0 md:text-sm md:font-medium">
                         <li>
-                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-[1rem]" aria-current="page">Exchange</p>
+                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Exchange</p>
                         </li>
                         <li>
-                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-[1rem]" aria-current="page">Transactions</p>
+                            <p className="cursor-pointer block py-2 pr-4 pl-3 text-white rounded-xl md:bg-transparent md:hover:bg-blue-50/10 hover:bg-blue-400 md:px-3 md:py-2 text-base" aria-current="page">Transactions</p>
                         </li>
                     </ul>
                 </div>
@@ -36,10 +36,10 @@ const Navbar = () => {
                     <div className="backdrop-blur-lg  w-full h-full">
                         <ul className="flex flex-col mt-24 xs:pr-24 xs:pl-8 pr-16 pl-6 font-medium">
                             <li>
-                                <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Exchange</p>
+                                <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Exchange</p>
                             </li>
                             <li>
-                                <p className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Transactions</p>
+                                <p className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-base" aria-current="page">Transactions</p>
                             </li>
                         </ul>
                     </div>
