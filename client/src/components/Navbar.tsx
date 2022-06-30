@@ -12,7 +12,7 @@ const Navbar = () => {
                 <button 
                 // onClick={() => {setMenuOpen(!menuOpen)}}
                 type="button" 
-                className="z-20 inline-flex items-center ml-3 p-2 rounded-lg text-sm md:hidden focus:outline-none focus:ring-2 text-white hover:hover:bg-blue-50/10 focus:ring-gray-600" 
+                className="z-[51] inline-flex items-center ml-3 p-2 rounded-lg text-sm md:hidden focus:outline-none focus:ring-2 text-white hover:hover:bg-blue-50/10 focus:ring-gray-600" 
                 aria-controls="mobile-menu"
                 onClick={() => {setMenuOpen(!menuOpen)}}
                 >
@@ -31,15 +31,18 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {menuOpen &&
-                <div className="md:hidden absolute top-0 right-0 h-screen bg-slate-900/50 backdrop-blur-lg">
-                    <ul className="flex flex-col mt-24 xs:pr-24 xs:pl-8 pr-16 pl-6 font-medium">
-                        <li>
-                            <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Exchange</p>
-                        </li>
-                        <li>
-                            <p className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Transactions</p>
-                        </li>
-                    </ul>
+                // mobile menu
+                <div className="md:hidden rounded-bl-3xl border-[1px] bg-slate-900/50 border-b-white/20 border-l-white/20 absolute -top-1 right-0 h-56 z-50 overflow-hidden">
+                    <div className="backdrop-blur-lg  w-full h-full">
+                        <ul className="flex flex-col mt-24 xs:pr-24 xs:pl-8 pr-16 pl-6 font-medium">
+                            <li>
+                                <p className="slide cursor-pointer block my-2 py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Exchange</p>
+                            </li>
+                            <li>
+                                <p className="slide cursor-pointer block py-2 pr-4 pl-3 text-white rounded-lg bg-transparent hover:bg-blue-50/10 text-[1rem]" aria-current="page">Transactions</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 }
             </div>
