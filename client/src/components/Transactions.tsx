@@ -1,6 +1,5 @@
 import { useContext, FC } from 'react'
 import { TransactionContext } from '../context/TransactionContext'
-import testData from '../utils/testData'
 import { shortenAddressMore } from '../utils/shortenAddressMore'
 
 import { MdOutlineLink } from 'react-icons/md'
