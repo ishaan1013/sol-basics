@@ -76,17 +76,17 @@ const Landing = () => {
                         >
                             <Form>
                                 <div className="flex flex-col w-full">
-                                    <label className="text-white font-medium text-xs mb-1 pl-2" htmlFor="ethAddress">Address</label>
-                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="ethAddress" name="ethAddress" placeholder="Your Address" />
+                                    <label className="text-white font-medium text-xs mb-1 pl-2" htmlFor="ethAddress">Address To</label>
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="ethAddress" name="ethAddress" placeholder="Recipient's Address" />
                                     <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="amount">Amount</label>
-                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="amount" name="amount" placeholder="Your Amount" />
+                                    <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="amount" name="amount" placeholder="Amount in ETH" />
                                     <label className="text-white font-medium text-xs mb-1 pl-2 mt-4" htmlFor="message">Message</label>
                                     <Field className="bg-white/[0.05] text-sm text-white font-medium rounded-lg p-2 border-[1px] border-white/20 focus:outline-white/20 outline-1 placeholder:select-none placeholder-white/30 placeholder:font-normal" id="message" name="message" placeholder="Your Message" />
 
                                     { isLoading ?
                                     <Loader/>
                                     :
-                                    <button className="focus:outline-violet-400 focus:border-none select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-6 rounded-lg text-[#0f121aee] font-bold" type="submit">Submit</button>
+                                    <button className="focus:outline-violet-400 focus:border-none select-none bg-gradient-to-r from-violet-400 hover:from-violet-500 to-blue-300 hover:to-blue-400 w-full p-2 mt-6 rounded-lg text-[#0f121aee] font-bold" type="submit">Send</button>
                                     }
                                 </div>
                             </Form>
